@@ -25,19 +25,23 @@ public class App {
 
     public static ArrayList<Schedeule> readData(String filename)
     {
+        int linec= 1;
             ArrayList<Schedeule> schedeules = new ArrayList<>();
             String content = "";
            String[] parts = new String[7];
+           String line;
             
                 File file = new File(filename);
                 try (FileReader fr = new FileReader(file); BufferedReader br = new BufferedReader(fr)) {
-                    String line;
+                    
+                    
                     while (((line = br.readLine()) != null))
                     {
-                
                         content += line + "\n";
                         parts = line.split(";");
                         schedeules.add(new Schedeule(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5], parts[6]));
+                        linec++;
+                        
                         
                     }
                     return schedeules;
@@ -47,17 +51,32 @@ public class App {
                 {
                     try (FileReader fr = new FileReader(file);BufferedReader br = new BufferedReader(fr))
                     {
-
-                            br.readLine();
-                            String line;
+                            // System.out.printf("Error on line %d", linec);
+                            // System.out.print(" " + e.getMessage());
+                            // br.readLine();
+                            ArrayList<Schedeule> schedeuleserror = new ArrayList<>();
+                            linec = 1;
                     while (((line = br.readLine()) != null))
                     {
-                
+                        
                         content += line + "\n";
                         parts = line.split(";");
-                        schedeules.add(new Schedeule(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5], parts[6]));
+                        if (parts[0].startsWith("SWD"))
+                        {
+                            schedeuleserror.add(new Schedeule(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5], parts[6]));
+                            linec++;
+                        }
+                        else
+                        {
+                            System.out.printf("Error on line %d!!!", linec);
+                            linec++;
+                            System.out.print(" " + e.getMessage() + " ");
+                            System.out.println();
+                        }
+                        
                         
                     }
+                    schedeules = schedeuleserror;
                     return schedeules;
                 
                             
