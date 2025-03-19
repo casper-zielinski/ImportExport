@@ -107,4 +107,11 @@ public class App {
                 }
                 
     }
+
+
+
+    public static void writeData(Schedeule schedeule, String type)
+    {
+        
+    }
 }
