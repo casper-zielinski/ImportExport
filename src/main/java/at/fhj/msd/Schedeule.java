@@ -25,4 +25,17 @@ public class Schedeule {
                   throw new IllegalArgumentException("Only schedules with a cohort starting with SWD are \"valid\" for our example!");
             }
       }
+
+      public String asCsv(String d)
+      {
+            return String.format("%s%s%s%s%s%s%s%s%s%s%s%s%s\n",
+            this.cohort, d, this.group,d, this.lecture,d,this.starts,d,
+            this.ends,d,this.lecturer,d,this.place);
+      }
+
+      public String asSql()
+      {
+            return String.format("INSERT INTO schedeules VALUES (%s,%s,%s,%s,%s,%s,%s) \n",
+            this.cohort, this.group,this.lecture,this.starts, this.ends, this.lecturer, this.place);
+      }
 }

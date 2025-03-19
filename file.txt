@@ -1,4 +1,3 @@
 SWDCohort;group;lecture;starts;ends;lecturer;place
-DCSWDCohort2;group2;lecture2;starts2;ends2;lecturer2;place2
 SWDCohort3;group3;lecture3;starts3;ends3;lecturer3;place3
 SWDCohort;group;lecture;starts;ends;lecturer;place
