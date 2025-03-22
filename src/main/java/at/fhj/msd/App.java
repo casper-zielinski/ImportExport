@@ -8,7 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-
+import javax.xml.crypto.Data;
 
 
 public class App {
@@ -24,7 +24,8 @@ public class App {
         schedeules.add(d);
         //readData("file.txt");
         //writeData(schedeules, "csv");
-        DataWriter data = new DataWriter("Bob", schedeules);
+        DataReader dt = new DataReader("file.txt");
+        DataWriter data = new DataWriter("ovo", dt.read());
         data.writeCsv();
         data.writeTsv();
         data.writeSql();

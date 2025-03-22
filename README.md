@@ -10,6 +10,10 @@
 
 4. It also prints on the terminal how many lines the document has and the name of it.
 
+5. Classes added that do the same as the methods, by creating a DataWriter classy you can then write that document in csv, tsv oder sql (like in the methods), you give the class a string for the filename and a schedeule list.
+
+6. There is also a DataReader, which reads the data, you only have to give the class the name of the file that it should read.
+
 ## Notes
 
 - The file should be designed in a way for the reader Method ``readData`` to read: Example:
