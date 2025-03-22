@@ -22,8 +22,12 @@ public class App {
         schedeules.add(s);
         schedeules.add(b);
         schedeules.add(d);
-        readData("file.txt");
-        writeData(schedeules, "csv");
+        //readData("file.txt");
+        //writeData(schedeules, "csv");
+        DataWriter data = new DataWriter("Bob", schedeules);
+        data.writeCsv();
+        data.writeTsv();
+        data.writeSql();
 
     }
 
